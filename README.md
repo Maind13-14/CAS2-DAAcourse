@@ -1,5 +1,7 @@
 CAS2-2.1 Designing Advanced Artifacts  
-Massimo Banzi, Giorgio Olivero  
+==============
+Massimo Banzi, Giorgio Olivero 
+==============
 (8 ECTS) documentation 
 ==============
 
