@@ -1,12 +1,12 @@
-CAS2-Designing Advanced Artifacts course - documentation 
+CAS2-2.1 Designing Advanced Artifacts  
+Massimo Banzi, Giorgio Olivero  
+(8 ECTS) documentation 
 ==============
 
-2.1 Designing Advanced Artifacts  
-Massimo Banzi, Giorgio Olivero  
-(8 ECTS)  
+Documentation
 --------
 
-**Description**
+**Course description**
 Everyday objects of the next future will be more connected each other. They will become interoperable
 devices able to communicate each other, to share data with internet and to provide
 meaningful, yet natural experiences. The design challenge of this envisioned scenario
