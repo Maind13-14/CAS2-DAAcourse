@@ -1,0 +1,37 @@
+2.1 Designing Advanced Artifacts
+
+TITLE: 	“Hunter of Hex-Labyrinth” internet powered board game
+
+AUTHOR:	Sudarshan Raghunathan, Illaria Baggio
+
+YEAR:		2014
+
+ABSTRACT: 
+In this project, the aim was to come up with a concept under the topic of “The internet of things” and under the theme “The messiness of the home environment”.
+Our team chose to study the possibilities with children and the devising of equipment for them that had to be fun and serve a purpose.
+
+After multiple iterations, we landed upon the concept of a board game, wherein the idea is to hide multiple(four) treasures within the confines of a 14 celled hexagonal board and the opponent has to discover where these treasures were hidden using a unique player character and their own board. The first to discover the other’s four treasures pieces is the winner of the game.    
+  
+INTERFACE  AND INTERACTION MODALITY:
+The main interface in question is a board which contains fourteen hexagonal cells. Then comes the four pieces or treasures which are to be hidden and discovered by both players, respectively. Finally we have a player character which is used as a pawn to discover the treasures, which makes it in essence a journeyman. 
+
+To inform each player of their progress and that of his/her opponents, we make use of a score board made of 8 LED’s. The first four LED’s let the player know what their score is and the next four tells them about their opponent’s progress.
+
+To let the players know the game state and their respective turns, we make use of an RGB LED embedded in each board, which turns red when another player is making his/her move and turns green when it is the current player’s turn to make a move. They flash under the auspices of the colour blue when either player wins the game and also at the beginning of the game.  
+  
+USER EXPERIENCE:
+The user experience can be spilt into two segments. The first can be divided further into two sub-segments, the first of which comprises of switching on the system and inviting another player for a game. This is done by pressing the on button and when the other player does the same, both LED’s in both boards glow blue.
+
+The second segment comprises of hiding the treasures on both boards. This is fairly straightforward and both players hide their four treasures cards at different locations in their boards. These locations are then sent over to the opponent’s board, where it remains invisible until discovered by that player.
+
+Finally, we need to find the hidden elements using a player controlled character. The first to do so, wins the game. This being a turn based game, wherein both players take turns to move their player character to try and search for the treasures, requires signals which indicate respective turns. To this end we use red lights to show the opponent’s character is being moved and green to indicate that the player is free to make his move.
+
+Finally when either player has discovered all four treasures, the blue lights start flashing, indicating that the player has won.
+ 
+
+RESEARCH AND DEVELOPMENT:
+In order to create a more lucid experience, it is possible to add sonic interaction design features such as voice guidance to provide clues, whenever a player is close to the treasure or vibration/other novel means of interaction to create a richer and more diversified user experience.
+
+LICENSE:
+
+CC BY 3.0

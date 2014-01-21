@@ -1,0 +1,21 @@
+Hardware and Electronics: 
+TITLE:  Using two Arduino YUN’s to connect to each other and transmit information that can be used on the game boards.
+
+DESCRIPTION:
+This project utilises two Arduino YUN’s which are made to communicate with each other via the MQTT messaging platform in order to exchange values which can be used to identify the location of different treasures which are transferred locally.
+
+To this end, we make use of photo resistors (28 in all), commonly known as light sensors to sense the presence of any object placed over them.
+
+We also make use of MUX shields in order to give us the relatively large number of pins that we need. These act as a multiplexer of sorts to help us increase the number of pins we can accommodate without drastically increasing the size of either of the boards.
+
+Then we also make use of 8 LED lights in each board for a total of 16 LEDs to act as a score board displaying the score of each player in both boards competitively.
+
+COMPONENTS USED:		
+LEDs (16), Arduino YUNs (2pcs), wires, Photoresistors (28), resistors, RGB LEDs (2pcs), Buttons (2pcs)    
+
+LICENSE:
+
+CC BY 3.0
+
+
+

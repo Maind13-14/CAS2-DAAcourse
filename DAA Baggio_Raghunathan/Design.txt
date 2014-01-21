@@ -1,0 +1,28 @@
+DESIGN: 
+DESIGN TITLE:  Internet connected “Treasure hunting” board game with hexagonal blocks/segments and themed tiles/player characters
+ 
+DESCRIPTION AND FABRICATION PROCESS:
+We have fourteen hexagonal shaped segments that forms the base of our player’s game boundaries. They have crevices in the centre to provide space to place the light sensor within them.
+ 
+We have used the laser cutting machine’s light cut in order to achieve the correct dimension, shape and detail that our object requires. Furthermore, after vigorous sanding, a layer of lacquer has been added atop both the boards and general surfaces.
+
+Further to this plaster had been added to the model to give it a smoother sheen/feel for its surface and finally we add a layer of paint to give it the required color.
+
+The light cut feature has been used to achieve the lines and geometry that denote the hexagonal cells, all fourteen of which have been done using the same process.
+Similarly, the hexagonal tiles denoting the treasures and also the player characters have been cut using the same dimensions as those on the board, making for a total of 10 tiles (2 player character tiles, 8 treasures).
+
+Finally we have cut eight equal crevices within each board to fit the score board and its LED’s. Then we have a main hole which fits within itself, the RGB LED used to denote user interaction.
+
+The undersides of all the parts have been glued to one another and this gives some structural rigidity to the model.    
+ 
+Translucent paper is added atop the LED’s to cover them and for aesthetic reasons.
+Considering that the shape of the board symbolises a Honeycomb, we have stuck to the concept of a player character being a bear and chasing honeycombs, which happens to be the hidden treasure.
+
+With this we get a fairly decent description of our model.
+
+MATERIALS, MACHINES AND TOOLS:		
+Laser cutting machine, paint/paintbrush, soldering iron, power drill, plaster, wood 
+
+LICENSE:
+
+CC BY 3.0
