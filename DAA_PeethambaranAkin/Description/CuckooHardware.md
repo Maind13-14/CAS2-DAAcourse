@@ -17,11 +17,11 @@ The product is implemented using an Arduino Yún and an Arduino UNO microcontrol
 7.Potentiometer
 
 
-##CReference to other projects##C
+##CReference to other projects##
 
 None
 
-##CLicense##C
+##CLicense##
 
 Files
 
