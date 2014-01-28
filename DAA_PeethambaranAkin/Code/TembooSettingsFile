@@ -1,0 +1,16 @@
+//Temboo settings file to be saved on the sd card on yun to save memory on arduino
+
+-aYour-Temboo-Account-Name
+-c/Library/Yahoo/Weather/GetWeatherByAddress
+-umyFirstApp
+-pYour-App-Key-Value
+
+
+-oday1condition:/rss/channel/item/yweather:forecast[1]/@code:Response
+-oday1High:/rss/channel/item/yweather:forecast[1]/@high:Response
+-oday2condition:/rss/channel/item/yweather:forecast[2]/@code:Response
+-oday2High:/rss/channel/item/yweather:forecast[2]/@high:Response
+-oday3condition:/rss/channel/item/yweather:forecast[3]/@code:Response
+-oday3High:/rss/channel/item/yweather:forecast[3]/@high:Response
+-oday4condition:/rss/channel/item/yweather:forecast[4]/@code:Response
+-oday4High:/rss/channel/item/yweather:forecast[4]/@high:Response
