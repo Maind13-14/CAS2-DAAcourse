@@ -1,6 +1,6 @@
 2.1 Designing Advanced Artifacts
 
-TITLE: 	“Hunter of Hex-Labyrinth” internet powered board game
+TITLE: 	“Honey be” internet powered board game
 
 AUTHOR:	Sudarshan Raghunathan, Illaria Baggio
 
