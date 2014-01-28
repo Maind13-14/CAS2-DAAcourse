@@ -2,6 +2,7 @@ HARDWARE AND ELECTRONIC
 =======================
 
 **DESCRIPTION**
+
 The project is based on two Arduino YUN boards, each one is placed in different device and can communicate one with each other. The connection between the two devices is on the wireless network and use MQTT message services. Each devices has its own methods of interaction. 
 
 The frame has two IR sensors that can detect when the user caress the frame and  two capacitive sensors under the edge frame which are detect holding the frame with both hands. A set of LEDs which are under the surface of the frame edge turning on and off as a feedback for the user about the different interactions. 
