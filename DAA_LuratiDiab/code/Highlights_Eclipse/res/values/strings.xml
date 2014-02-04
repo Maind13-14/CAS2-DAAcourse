@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Exibition</string>
+    <string name="action_settings">Settings</string>
+    <string name="potVal">PotVal: </string>
+    <string name="updating">STATE: </string>
+    <string name="checking">updating: </string>
+
+</resources>
