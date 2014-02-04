@@ -1,0 +1,142 @@
+#include <Max3421e.h>
+#include <Usb.h>
+#include <AndroidAccessory.h>
+#include <Encoder.h>
+
+// creation of an identity of the Arduino ADK to be seen as a USB accessory from the Andorid phone
+// (the field have to match with the res/xml/accessory_filter.xml file inside the Eclipse project)
+AndroidAccessory acc("MAIND-GrowthRec", "AndroidADK", "AndroidADK", "1.0", "http://www.maind.supsi.ch", "01"); 
+
+
+// side noto: the "#define" don't need the ; at the end and the = in beetween
+
+// variable to define the protocol
+// (in the Android app and in the Arduino sketch the variable have
+// to match (it doesn't metter witch values you give, they have just to be the same)
+
+#define COMMAND_ARDUINO 0x3         // from Arduino to Android      
+#define TARGET_ANDROID 0x0
+
+#define COMMAND_ANDROID 0x11        //from Android to Arduino
+#define TARGET_ARDUINO 0x9
+
+// button (from knob) variables
+#define BTN_PRESS 0x1               // value to send if the button is pressed onece
+#define BTN_PRESS_3_SEC 0x2         // value to send if the button is pressed for 3 second
+#define BTN_NOT_PRESS 0x0
+#define INPUT_PIN_BTN 11            // digital input on the board fot the button
+int currentbuttonstate;
+int lastButtonState;
+
+// potentiometer variables
+#define INPUT_PIN_POT A0             // analog input pin on the board for the potentiometer
+int potVal;                          // variable to store the read value
+
+// knob (encoder) variables
+#define ENCODER_INCREASE 0x1         // value to send to the Android app to encrease of one
+#define ENCODER_DECREASE 0x2         // value to send to the Android app to encrease of one
+#define ENCODER_PIN_A 2              // pin on the board of the encoder pin A
+#define ENCODER_PIN_B 3              // pin on the board of the encoder pin B
+
+Encoder Knob(ENCODER_PIN_A , ENCODER_PIN_B);      // create a Encoder object (called "Knob") specifying to witch pin on the board is it connected
+
+// byte strings that contains the informations to excange inforations between Arduino and Andorid app
+// these string are buildet following a custom protocol eplained below (can be changed as you like)
+
+// *** sent byte array from the Arduino to the Android:
+byte sntmsg[8];
+// [0] COMMAND_ARDUINO, [1] TARGET_ANDROID (0), [2] button state, [3-6] pot values, [7] encoder action (-1 or +1)
+
+
+// time variables
+int startTime;
+int pressTime;
+
+// initialisation of the variables
+long oldKnobPos = -999;
+
+void setup() {
+
+  Serial.begin(19200);
+  acc.powerOn();                  //switch on the ArduinoADK, from this moment is an USB Accessory
+
+  sntmsg[0] = COMMAND_ARDUINO;    // start to fill the byte array for match it with the custom protocol
+  sntmsg[1] = TARGET_ANDROID;
+
+}
+
+void loop(){
+
+  long newKnobPos;              // variable to store the new value of the knob (written here it's reset each loop())
+  sntmsg[2] = BTN_NOT_PRESS;    // reset of the button state to "not press"
+
+
+  // *** check if the Arduino ADK is connected to the Android ***
+
+  if (acc.isConnected())  {    
+
+  // ** Button managment
+  
+    currentbuttonstate = digitalRead(INPUT_PIN_BTN);
+
+      if(currentbuttonstate == HIGH && lastButtonState == LOW){
+
+        startTime = millis();
+
+        while(digitalRead(INPUT_PIN_BTN) == HIGH){
+
+          pressTime = millis() - startTime;
+
+          if(pressTime > 3000){ 
+            sntmsg[2] = BTN_PRESS_3_SEC;
+            break;
+          }
+          else {
+            sntmsg[2] = BTN_PRESS;
+          }
+        } 
+      }
+      lastButtonState = currentbuttonstate;
+    
+    // ** Potentiometer managment
+    
+    potVal = analogRead(INPUT_PIN_POT);        // read the state of the button
+    
+    sntmsg[3] = (byte) (potVal >> 24);    // bit shifting
+    sntmsg[4] = (byte) (potVal >> 16);
+    sntmsg[5] = (byte) (potVal >> 8);
+    sntmsg[6] = (byte) potVal;
+    
+    // ** Knob managment
+
+    newKnobPos = Knob.read();
+    newKnobPos /= 4;              // trik to have just one value
+    if (newKnobPos > oldKnobPos){
+      sntmsg[7] = ENCODER_DECREASE;
+    }
+    else if (newKnobPos < oldKnobPos){
+      sntmsg[7] = ENCODER_INCREASE;
+    }     
+    else {
+       sntmsg[7] = 0x0;
+    }
+    oldKnobPos = newKnobPos;
+    
+    
+    // *** send the byte array with all 
+    // the intervace values to the Android app ***
+    acc.write(sntmsg,8);
+  }
+  delay(50);
+  
+      
+
+}
+
+
+
+
+
+
+
+
