@@ -1,4 +1,4 @@
-Template - Project description
+Project description
 ================
 
 Highlights
